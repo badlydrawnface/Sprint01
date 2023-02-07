@@ -48,7 +48,7 @@ public class People
 
     public void encounterStrategy(People otherPerson)
     {
-        if(myNation == otherPerson.getNation())
+        if(myNation.equals(otherPerson.getNation()))
         {
             // There will be an ugly confrontation
         }
