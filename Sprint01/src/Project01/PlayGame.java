@@ -8,9 +8,9 @@ import java.util.*;
 public class PlayGame
 {
 
-    ArrayList<Nation> allLivingNations = new ArrayList<>();
-    ArrayList<People> worldLivingPopulation = new ArrayList<>();
-    Random generator;
+    private ArrayList<Nation> allLivingNations = new ArrayList<>();
+    private ArrayList<People> worldLivingPopulation = new ArrayList<>();
+    private Random generator;
 
     public PlayGame()
     {
