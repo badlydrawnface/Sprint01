@@ -8,6 +8,10 @@ import Project01.People;
 
 public class Nation
 {
+  /**
+   * The Nation class manages the properties of the nations, like the name, its combined lifepoints, and also
+   * inherits the properties from the people and tribes within, and can print them all out line-by-line.
+   */
     private int nationLifePoints;
     public static int nationCount = 0;
     private String nationName;
@@ -29,12 +33,20 @@ public class Nation
         livingPopulation.addAll(population);
     }
 
-
+    /**
+     * Checks the life points of a nation to determine if said nation is alive or not.
+     * @return true/false
+     */
     public Boolean isNationAlive()
     {
         return (nationLifePoints > 0);
     }
 
+    /**
+     * Checks each tribe of a nation, and if a tribe is alive, adds up all living members in an ArrayList
+     * in addition to their life points.
+     * @return ArrayList of population
+     */
     public ArrayList<People> getNationPopulation()
     {
         nationLifePoints = 0;
@@ -52,13 +64,18 @@ public class Nation
         return livingPopulation;
     }
 
-
+    /**
+     * Returns the nation's name.
+     * @return name of nation
+     */
     public String getNationName()
     {
         return nationName;
     }
 
-
+    /**
+     * Returns the name, and number of members of a living tribe, otherwise returning that the tribe is dead.
+     */
     public void printTribesStatus()
     {
         for(int tribe = 0; tribe < 1; tribe++)
@@ -75,6 +92,10 @@ public class Nation
         }
     }
 
+    /**
+     * Concatinates the nation's name, as well as the tribe names, all on new lines
+     * @return result
+     */
     public String toString()
     {
         String result = "\0";
