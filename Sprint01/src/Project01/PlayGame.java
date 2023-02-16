@@ -5,6 +5,13 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.*;
 
+
+/*
+ * The PlayGame class gets the amount of (living) people in the individual nations and the entire world, and within
+ * encounters between two random players alive in the world,uses random number generation to determine the amount
+ * of damaged deduced from the lifepoints of both players. This will continue until there is one (or no) nation left,
+ * then the game will print the winning nation, or print "No Winner!" if there is no living nation
+ */
 public class PlayGame
 {
 
@@ -18,6 +25,10 @@ public class PlayGame
         generator = new Random(seed.getTime());
     }
 
+    /**
+     * This method goes through every nation within the game, then calls each nation's getNationPopulation method, adding
+     * up all the people of all the nations into one ArrayList
+     */
     public void getWorldLivingPopulation(ArrayList<Nation> nations)
     {
         // add all living people to world list
@@ -29,7 +40,10 @@ public class PlayGame
         //System.out.println(worldLivingPopulation);
     }
 
-
+    /**
+     * Checks the lifepoints of each nation through their isNationAlive method, and adds the members of each nation
+     * that is alive.
+     */
     public void getAllLivingNations(ArrayList<Nation> nations)
     {
         getWorldLivingPopulation(nations);
@@ -44,9 +58,13 @@ public class PlayGame
         //System.out.print(allLivingNations);
     }
 
-
+    /**
+     * In the case of the two People being from differing nations, an encounter will cause both players to take a
+     * randomly-generated amount of damage to each other, subtracting their lifepoints to those amounts. Does not
+     * take strategies into account.
+     */
     public void encounter(People p1, People p2)
-    {
+    {.
         // need to fix this to take strategies into account.
         if(p1.getNation() != p2.getNation())
         {
@@ -62,7 +80,11 @@ public class PlayGame
 
 
 
-
+    /**
+     * Getting all the remaining nations (this is called throughout the duration of the 'game'), two indices,
+     * other for each encountering player, are randomly-generated from the size of the world's population,
+     * and will continue for as long as there is more than one nation.
+     */
     public Boolean playOneRound(ArrayList<Nation> nations)
     {
         getAllLivingNations(nations);
@@ -88,7 +110,10 @@ public class PlayGame
 
     }
 
-
+    /**
+     * Returns the name of the last surviving nation, unless there exists no winner.
+     * @return winner
+     */
     public String getWinner()
     {
         if (allLivingNations.size() == 0)
