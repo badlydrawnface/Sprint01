@@ -4,7 +4,7 @@ import Project01.PeopleType;
 
 public class People
 {
-  /**
+  /*
    * The People class holds the information that a person within the game, will have; This includes the 
    * person's name, associated nation, associated tribe, its type, a description, and its lifepoints.
    */

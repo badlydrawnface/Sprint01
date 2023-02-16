@@ -8,7 +8,7 @@ import Project01.People;
 
 public class Nation
 {
-  /**
+  /*
    * The Nation class manages the properties of the nations, like the name, its combined lifepoints, and also
    * inherits the properties from the people and tribes within, and can print them all out line-by-line.
    */

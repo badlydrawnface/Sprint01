@@ -64,7 +64,7 @@ public class PlayGame
      * take strategies into account.
      */
     public void encounter(People p1, People p2)
-    {.
+    {
         // need to fix this to take strategies into account.
         if(p1.getNation() != p2.getNation())
         {
