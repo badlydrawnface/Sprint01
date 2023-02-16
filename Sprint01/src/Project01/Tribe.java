@@ -6,6 +6,9 @@ import java.util.ArrayList;
 import Project01.People;
 import Project01.PeopleType;
 
+/**
+ * The Tribe class manages a few different properties. It sets nationName, tribeName, life points, and adds people to the tribe
+ */
 public class Tribe
 {
     private String nationName;
@@ -14,6 +17,13 @@ public class Tribe
     private ArrayList<People> members = new ArrayList<>();
     private ArrayList<People> livingMembers = new ArrayList<>();
 
+    /**
+     * Constructor sets the nationName, tribeName, and life points. It also adds people to the tribes.
+     * @param nation
+     * @param tribe
+     * @param lifePoints
+     *
+     */
     public Tribe(String nation, String tribe, int lifePoints)
     {
         nationName = nation;
@@ -28,6 +38,10 @@ public class Tribe
             livingMembers.addAll(members);
     }
 
+    /**
+     *
+     * @returns an Arraylist of type people that are still alive and updates the life points of the tribe
+     */
     public ArrayList<People> getLivingTribeMembers()
     {
         livingMembers.clear();
@@ -55,27 +69,48 @@ public class Tribe
 */
 
 
+    /**
+     *
+     * @returns Returns the size of the tribe as an int
+     */
     public int getTribeSize()
     {
         return livingMembers.size();
     }
 
+    /**
+     *
+     * @return true if the trive is alive or false if they are dead. tribe is alive if their life points are greater than zero
+     */
     public Boolean isTribeAlive()
     {
         return (tribeLifePoints > 0);
     }
 
 
+    /**
+     *
+     * @return the remaining life points of the tribe as an int
+     */
     public int getTribeLifePoints()
     {
         return tribeLifePoints;
     }
 
+    /**
+     *
+     * @return the name of the tribe
+     */
     public String getTribeName()
     {
         return tribeName;
     }
 
+
+    /**
+     * Concatenates tribeName and the size of the tribe all on new lines
+     * @return result
+     */
     public String toString()
     {
         String result = "\0";
